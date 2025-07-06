@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espumita</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;   
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    nav {
+      background: #111;
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      color: white;
+      background-color: #111;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+   nav a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet);
+  background-size: 300%;
+  z-index: 0;
+  opacity: 0;
+  border-radius: 12px;
+  transition: opacity 0.5s ease;
+}
+
+nav a:hover::before {
+  opacity: 1;
+  animation: rgb-anim 3s linear infinite;
+}
+
+nav a span {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes rgb-anim {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
+}
+
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 80px;
+      padding: 60px 60px;
+    }
+
+    .intro-text {
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .intro-text h1 {
+      font-size: 36px;
+      font-weight: 900;
+    }
+
+    .intro-text span {
+      background: linear-gradient(to right, #FFD700, #FF0000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro-text p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .info-box {
+      background-color: #111;
+      padding: 25px 30px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .info-box p {
+      margin: 10px 0;
+    }
+
+    .info-box span {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .icon-cluster {
+      display: grid;
+      grid-template-columns: repeat(2, 70px);
+      grid-gap: 20px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+      padding: 35px;
+      border-radius: 50%;
+      position: relative;
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    .icon-container {
+      width: 70px;
+      height: 70px;
+      background-color: #1e1e1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .icon-container:hover {
+      transform: scale(1.1);
+    }
+
+    .icon-container img {
+      width: 34px;
+      height: 34px;
+    }
+
+    .right-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255,255,255,0.08);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(255,255,255,0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255,255,255,0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 30px 20px;
+      }
+
+      .intro-text {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .info-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="sobremi.html">Sobre Mí</a>
+    <a href="proyectos.html">Proyectos</a>
+    <a href="#">Blog</a>
+    <a href="trabajos.html">Trabajos</a>
+    <a href="precios.html">Compras Web/Discord</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+  <section class="hero">
+    <div class="intro-text">
+      <h1>Hola, soy <span>Espumita</span></h1>
+      <p>Desarrollador Web, de Videojuegos & Staff</p>
+
+      <div class="info-box">
+        <p><span style="color: #ff4d4d;">Desarrollo Web</span><br>HTML, CSS y JavaScript. Aprendizaje en progreso...</p>
+        <p><span style="color: #ffff33;">Videojuegos</span><br>Diseño de juegos y Unity</p>
+        <p><span style="color: #33aaff;">Staff</span><br>Consola y experiencias</p>
+      </div>
+    </div>
+
+    <div class="right-icons">
+      <div class="icon-cluster">
+        <div class="icon-container">
+          <img src="https://cdn-icons-png.flaticon.com/512/69/69524.png" alt="Casa" />
+        </div>
+        <div class="icon-container">
+          <img src="https://cdn-icons-png.flaticon.com/512/484/484167.png" alt="Punto referencia" />
+        </div>
+        <div class="icon-container">
+          <img src="https://cdn-icons-png.flaticon.com/512/2099/2099058.png" alt="Ajustes" />
+        </div>
+        <div class="icon-container">
+          <img src="https://cdn-icons-png.flaticon.com/512/1082/1082170.png" alt="Bombilla" />
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
